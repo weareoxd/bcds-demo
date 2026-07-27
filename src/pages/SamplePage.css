@@ -1,0 +1,17 @@
+.sdg-border {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 1px;
+}
+.sdg-contain {
+  margin: auto;
+  max-width: 1120px;
+  display: flex;
+}
+.sdg-breadcrumbs-contain {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+.sdg-breadcrumbs {
+  display: flex;
+  padding: 4px 4px 4px 0px;
+}

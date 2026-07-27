@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link as RouterLink } from "react-router-dom";
 import {
   Accordion,
   AccordionGroup,
@@ -173,6 +174,9 @@ export default function App() {
         logoLinkElement={<a href="/home" title="Home" />}
         skipLinks={[<a href="#main">Skip to main content</a>]}
       >
+        <RouterLink to="/sample" style={{ color: "#fff", fontSize: "0.875rem" }}>
+          Sample Page
+        </RouterLink>
         <Button variant="secondary">Log in</Button>
       </Header>
       <StyleToggle />
