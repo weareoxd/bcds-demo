@@ -8,7 +8,7 @@ import { StyleProvider } from './styleContext.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <StyleProvider>
         <Routes>
           <Route path="/" element={<App />} />
