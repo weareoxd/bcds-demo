@@ -1,17 +1,134 @@
-.sdg-border {
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 1px;
-}
-.sdg-contain {
-  margin: auto;
-  max-width: 1120px;
+/* ── BCDS Sample Page ──────────────────────────────────────────── */
+/* Namespaced under `bcds-sample-page` so this template's styles never */
+/* leak into or collide with other pages/components. */
+
+.bcds-sample-page {
   display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
-.sdg-breadcrumbs-contain {
-  position: relative;
+
+/* ── Hero banner ── */
+.bcds-sample-page--hero {
+  background-color: var(--bcds-surface-color-primary-default);
+  padding-block: var(--bcds-layout-padding-xlarge);
   display: flex;
-  overflow: hidden;
+  flex-direction: row;
+  align-items: center;
+  min-height: 180px;
 }
-.sdg-breadcrumbs {
+
+/* ── Body: sidenav + main ── */
+.bcds-sample-page--content-outer {
+  flex: 1;
+}
+
+.bcds-sample-page--body {
   display: flex;
-  padding: 4px 4px 4px 0px;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.bcds-sample-page--sidenav {
+  width: 220px;
+  min-width: 220px;
+  padding-block: 2rem;
+}
+
+.bcds-sample-page--sidenav-heading {
+  font: var(--typography-bold-body);
+  text-transform: uppercase;
+  margin: 0 0 var(--layout-margin-small);
+}
+
+.bcds-sample-page--sidenav-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.bcds-sample-page--sidenav-link {
+  display: block;
+  padding: var(--layout-margin-small) var(--layout-margin-small)
+    var(--layout-margin-small) var(--layout-margin-medium);
+  font: var(--typography-regular-body);
+  text-decoration: none;
+  transition: background-color 0.1s ease;
+}
+
+.bcds-sample-page--sidenav-link:hover {
+  background-color: var(--bcds-surface-color-secondary-hover);
+  color: var(--surface-color-primary-hover);
+  text-decoration: underline;
+}
+
+.bcds-sample-page--main {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  max-width: 820px;
+  padding-block: 2rem;
+}
+
+/* No sidenav (SHOW_SIDENAV = false): centre the single content column */
+.bcds-sample-page--main:only-child {
+  margin: 0 auto;
+}
+
+.bcds-sample-page--section {
+  padding-bottom: 2.5rem;
+  scroll-margin-top: 1.5rem;
+}
+
+.bcds-sample-page--section-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.bcds-sample-page--row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.bcds-sample-page--back-link {
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
+/* ── Responsive: stack sidenav above main as a scrollable strip ── */
+@media (max-width: 1024px) {
+  .bcds-sample-page--body {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .bcds-sample-page--sidenav {
+    width: 100%;
+    min-width: 0;
+    padding: 1rem 0 0;
+    border-bottom: 1px solid var(--bcds-surface-color-border-default);
+  }
+
+  .bcds-sample-page--sidenav-list {
+    flex-direction: row;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+  }
+
+  .bcds-sample-page--sidenav-link {
+    white-space: nowrap;
+    border-left: none;
+    border-bottom: 3px solid transparent;
+    padding-left: 0.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .bcds-sample-page--main {
+    padding-block: 1.5rem;
+  }
 }

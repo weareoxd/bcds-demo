@@ -1,0 +1,12 @@
+.bcds-page-band {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.bcds-page-band--inner {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 var(--bcds-layout-padding-medium);
+  box-sizing: border-box;
+}
